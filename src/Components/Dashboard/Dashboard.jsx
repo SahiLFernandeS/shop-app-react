@@ -3,7 +3,7 @@ import Navbar from "../Navbar"
 
 const Dashboard = () => {
   return (
-    <Navbar />
+    <>Dashboard</>
   )
 }
 
