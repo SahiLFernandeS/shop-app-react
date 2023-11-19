@@ -163,10 +163,19 @@ export default function ButtonAppBar() {
   );
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      sx={
+        {
+          // width: "100%",
+          // position: "fixed",
+          // top: "0px",
+        }
+      }
+    >
       <CustomNotification
         sx={{
-          display: { md: "flex", xs: "none" },
+          display: { lg: "flex", xs: "none" },
         }}
       >
         <Typography variant="caption" component="p">
@@ -174,7 +183,7 @@ export default function ButtonAppBar() {
           CASH/CARD. FOR QUERY CALL @ <a href="tel:+917507857779">7507857779</a>
         </Typography>
       </CustomNotification>
-      <CustomHeader disableGutters sx={{ display: { md: "flex", xs: "none" } }}>
+      <CustomHeader disableGutters sx={{ display: { lg: "flex", xs: "none" } }}>
         {/* <IconButton
             size="large"
             edge="start"
@@ -249,7 +258,7 @@ export default function ButtonAppBar() {
           </IconButton>
         </Box>
       </CustomHeader>
-      <CustomHeader disableGutters sx={{ display: { xs: "flex", md: "none" } }}>
+      <CustomHeader disableGutters sx={{ display: { xs: "flex", lg: "none" } }}>
         <Box>
           <IconButton
             size="large"
@@ -312,7 +321,7 @@ export default function ButtonAppBar() {
       </CustomHeader>
       <CustomNotification
         sx={{
-          display: { md: "none", xs: "flex" },
+          display: { lg: "none", xs: "flex" },
         }}
       >
         <Typography
