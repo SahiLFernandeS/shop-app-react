@@ -4,14 +4,15 @@ import {
   SearchOutlined,
 } from "@mui/icons-material";
 import { Box, Button, Grid, IconButton, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import styled from "styled-components";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import { ThemeContext } from "../ThemeContext";
 
 const CustomTypography = styled(Typography)({
-  color: "#ae9479",
+  // color: "#ae9479",
 });
 
 const LinkButton = styled(Button)({
@@ -20,11 +21,13 @@ const LinkButton = styled(Button)({
 });
 
 export default function Footer() {
+  const theme = useContext(ThemeContext);
+
   return (
     <>
       <Box
         sx={{
-          backgroundColor: "#311528",
+          backgroundColor: `${theme.backgroundColor}`,
           color: "#fff",
           height: "324px",
           display: { lg: "flex", xs: "none" },
@@ -40,7 +43,13 @@ export default function Footer() {
           }}
         >
           <Grid item xs={6} padding={"40px"}>
-            <CustomTypography variant="h6" component="p">
+            <CustomTypography
+              variant="h6"
+              component="p"
+              sx={{
+                color: `${theme.color}`,
+              }}
+            >
               About Us
             </CustomTypography>
             <Typography
@@ -62,6 +71,7 @@ export default function Footer() {
               component="p"
               sx={{
                 padding: "6px 0",
+                color: `${theme.color}`,
               }}
             >
               Follow us
@@ -96,7 +106,13 @@ export default function Footer() {
             </IconButton>
           </Grid>
           <Grid item xs={3} padding={"40px"}>
-            <CustomTypography variant="h6" component="p">
+            <CustomTypography
+              variant="h6"
+              component="p"
+              sx={{
+                color: `${theme.color}`,
+              }}
+            >
               Living Liquidz
             </CustomTypography>
             <LinkButton
@@ -166,7 +182,13 @@ export default function Footer() {
             </LinkButton>
           </Grid>
           <Grid item xs={3} padding={"40px"}>
-            <CustomTypography variant="h6" component="p">
+            <CustomTypography
+              variant="h6"
+              component="p"
+              sx={{
+                color: `${theme.color}`,
+              }}
+            >
               Useful Links
             </CustomTypography>
             <LinkButton
@@ -240,13 +262,15 @@ export default function Footer() {
       </Box>
       <Box
         sx={{
-          backgroundColor: "#311528",
-          color: "#ae9479",
+          // backgroundColor: "#311528",
+          backgroundColor: `${theme.backgroundColor}`,
+          color: `${theme.color}`,
           height: "70px",
           display: { lg: "none", xs: "flex" },
           width: "100%",
-          position: "fixed",
+          position: "sticky",
           bottom: "0px",
+          zIndex: 1,
         }}
       >
         <Grid container>

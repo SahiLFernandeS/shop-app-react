@@ -26,21 +26,23 @@ import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import { WhatsApp } from "@mui/icons-material";
 import { useState } from "react";
+import { ThemeContext } from "../ThemeContext";
+import { useContext } from "react";
 
 const MenuButton = styled(Button)({
   backgroundColor: "inherit",
 });
 
 const CustomHeader = styled(Toolbar)({
-  backgroundColor: "#311528",
-  color: "#ae9479",
+  // backgroundColor: "#311528",
+  // color: "#ae9479",
   flexDirection: "row",
   justifyContent: "space-between",
 });
 
 const CustomNotification = styled(Box)({
-  backgroundColor: "#ae9479",
-  color: "#311528",
+  // backgroundColor: "#ae9479",
+  // color: "#311528",
   justifyContent: "center",
   alignItems: "center",
   height: "30px",
@@ -54,6 +56,8 @@ const HeaderBox = styled(Box)({
 });
 
 export default function ButtonAppBar() {
+  const theme = useContext(ThemeContext);
+  // console.log("theme------->", theme);
   const [state, setState] = useState({
     left: false,
   });
@@ -111,7 +115,8 @@ export default function ButtonAppBar() {
           <Typography
             variant="subtitle1"
             sx={{
-              color: "#ae9479",
+              // color: "#ae9479",
+              color: `${theme.color}`,
             }}
           >
             Mumbai & Pune
@@ -139,7 +144,8 @@ export default function ButtonAppBar() {
               <ListItemText
                 primary={text}
                 sx={{
-                  color: "#ae9479",
+                  // color: "#ae9479",
+                  color: `${theme.color}`,
                 }}
               />
             </ListItemButton>
@@ -176,6 +182,8 @@ export default function ButtonAppBar() {
       <CustomNotification
         sx={{
           display: { lg: "flex", xs: "none" },
+          backgroundColor: `${theme.color}`,
+          color: `${theme.backgroundColor}`,
         }}
       >
         <Typography variant="caption" component="p">
@@ -183,7 +191,14 @@ export default function ButtonAppBar() {
           CASH/CARD. FOR QUERY CALL @ <a href="tel:+917507857779">7507857779</a>
         </Typography>
       </CustomNotification>
-      <CustomHeader disableGutters sx={{ display: { lg: "flex", xs: "none" } }}>
+      <CustomHeader
+        disableGutters
+        sx={{
+          display: { lg: "flex", xs: "none" },
+          backgroundColor: `${theme.backgroundColor}`,
+          color: `${theme.color}`,
+        }}
+      >
         {/* <IconButton
             size="large"
             edge="start"
@@ -258,7 +273,16 @@ export default function ButtonAppBar() {
           </IconButton>
         </Box>
       </CustomHeader>
-      <CustomHeader disableGutters sx={{ display: { xs: "flex", lg: "none" } }}>
+      <CustomHeader
+        disableGutters
+        sx={{
+          display: { xs: "flex", lg: "none" },
+          position: "sticky",
+          top: "0px",
+          backgroundColor: `${theme.backgroundColor}`,
+          color: `${theme.color}`,
+        }}
+      >
         <Box>
           <IconButton
             size="large"
@@ -322,6 +346,8 @@ export default function ButtonAppBar() {
       <CustomNotification
         sx={{
           display: { lg: "none", xs: "flex" },
+          backgroundColor: `${theme.color}`,
+          color: `${theme.backgroundColor}`,
         }}
       >
         <Typography
