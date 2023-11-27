@@ -10,23 +10,28 @@ import Dashboard from "./Components/Dashboard/Dashboard.jsx";
 import MasterComponent from "./Components/MasterComponent";
 import { ThemeContext } from "./ThemeContext";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Navigate to="Dashboard"></Navigate>,
+      // Component: MasterComponent,
+    },
+    {
+      path: "/",
+      element: <MasterComponent />,
+      children: [
+        {
+          path: "Dashboard",
+          element: <Dashboard />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Navigate to="Dashboard"></Navigate>,
-    // Component: MasterComponent,
-  },
-  {
-    path: "/",
-    element: <MasterComponent />,
-    children: [
-      {
-        path: "Dashboard",
-        element: <Dashboard />,
-      },
-    ],
-  },
-]);
+    basename: "/shop-app-react/",
+  }
+);
 
 const theme = {
   branding: "Living Liquidz",
