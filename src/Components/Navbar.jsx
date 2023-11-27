@@ -84,7 +84,7 @@ export default function ButtonAppBar() {
       <List>
         <ListItem key={"LIVINGLIQUIDZ"}>
           <Typography variant="h6" component="p" fontWeight={"800"}>
-            LIVINGLIQUIDZ
+            {theme.branding.toUpperCase()}
           </Typography>
           {/* <ListItemButton>
 
@@ -170,7 +170,7 @@ export default function ButtonAppBar() {
 
   return (
     <AppBar
-      position="static"
+      position="sticky"
       sx={
         {
           // width: "100%",
@@ -184,6 +184,7 @@ export default function ButtonAppBar() {
           display: { lg: "flex", xs: "none" },
           backgroundColor: `${theme.color}`,
           color: `${theme.backgroundColor}`,
+          // position: "static",
         }}
       >
         <Typography variant="caption" component="p">
@@ -197,6 +198,7 @@ export default function ButtonAppBar() {
           display: { lg: "flex", xs: "none" },
           backgroundColor: `${theme.backgroundColor}`,
           color: `${theme.color}`,
+          // position: "sticky",
         }}
       >
         {/* <IconButton
@@ -209,8 +211,16 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton> */}
         <HeaderBox sx={{}}>
-          <Typography variant="h6" component="span" sx={{}}>
-            LIVING LIQUIDZ
+          <Typography variant="h6" component="span" sx={{ cursor: "pointer" }}>
+            <a
+              href="/"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              {theme.branding.toUpperCase()}
+            </a>
           </Typography>
           <MenuButton color="inherit" endIcon={<KeyboardArrowDownIcon />}>
             SPIRITS
@@ -306,8 +316,22 @@ export default function ButtonAppBar() {
           </IconButton>
         </Box>
         <Box>
-          <Typography variant="h6" component="span" sx={{}}>
-            LIVING LIQUIDZ
+          <Typography
+            variant="h6"
+            component="span"
+            sx={{
+              cursor: "pointer",
+            }}
+          >
+            <a
+              href="/"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              {theme.branding.toUpperCase()}
+            </a>
           </Typography>
         </Box>
         <Box>

@@ -29,6 +29,7 @@ const router = createBrowserRouter([
 ]);
 
 const theme = {
+  branding: "Living Liquidz",
   backgroundColor: "black",
   color: "#ae9479",
 };

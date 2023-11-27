@@ -113,7 +113,7 @@ export default function Footer() {
                 color: `${theme.color}`,
               }}
             >
-              Living Liquidz
+              {theme.branding}
             </CustomTypography>
             <LinkButton
               sx={{
